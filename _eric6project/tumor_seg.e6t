@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
+<!-- eric6 tasks file for project tumor_seg -->
+<!-- Saved: 2019-03-23, 15:37:26 -->
+<Tasks version="6.0">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1" uid="{452e1f7f-3dd0-4c63-8e7e-4b2031ac245f}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:12</Created>
+    <Resource>
+      <Filename>tumor.py</Filename>
+      <Linenumber>155</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{e6898b62-4612-4bf4-923e-d7a6fd278e14}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:12</Created>
+    <Resource>
+      <Filename>tumor.py</Filename>
+      <Linenumber>208</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{01dc1519-c37f-4bfd-ab40-e4da87138b35}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:12</Created>
+    <Resource>
+      <Filename>tumor.py</Filename>
+      <Linenumber>230</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{e0dc25a0-7663-4453-b07b-d019adc6207f}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:12</Created>
+    <Resource>
+      <Filename>tumor.py</Filename>
+      <Linenumber>279</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{bef500e7-4688-42b1-b1c8-6c3ff7fceb40}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:23</Created>
+    <Resource>
+      <Filename>tumor_seg.py</Filename>
+      <Linenumber>232</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{3969dfe3-1190-4b63-b692-25a96cc6b8ef}">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2019-03-23, 15:37:23</Created>
+    <Resource>
+      <Filename>tumor_seg.py</Filename>
+      <Linenumber>561</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>
