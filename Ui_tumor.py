@@ -271,7 +271,7 @@ class Ui_tumor_seg(object):
 
     def retranslateUi(self, tumor_seg):
         _translate = QtCore.QCoreApplication.translate
-        tumor_seg.setWindowTitle(_translate("tumor_seg", "tumor_seg"))
+        tumor_seg.setWindowTitle(_translate("tumor_seg", "LATS_0.2"))
         self.choose_raw.setText(_translate("tumor_seg", "选择目录"))
         self.state_show_label1.setText(_translate("tumor_seg", "无任务"))
         self.show_1.setText(_translate("tumor_seg", "显示"))
