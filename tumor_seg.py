@@ -21,6 +21,7 @@ class Worker(QThread):
     sinOut = pyqtSignal(str, str)  # 自定义信号，执行run()函数时，从相关线程发射此信号
     sinOut2 = pyqtSignal(bytes)
     sinOut3 = pyqtSignal(bytes, bytes)
+    sinOut4 = pyqtSignal(str, str)
 
     def __init__(self, parent=None):
         super(Worker, self).__init__(parent)
@@ -104,7 +105,12 @@ class Worker(QThread):
             
             t_elapsed = t_end - t_start
             
-            self.sinOut.emit("耗时: " ,  str(round(t_elapsed, 4))+"秒")           
+            
+            #print(str(round(t_elapsed, 4)))
+            
+            self.sinOut4.emit("耗时: " ,  str(round(t_elapsed, 4)))
+            #self.sinOut.emit("耗时: " ,  's')
+            
             self.sinOut3.emit(a, b)
 
             
@@ -184,7 +190,7 @@ class Worker(QThread):
       
             t_elapsed = t_end - t_start
          
-            self.sinOut.emit("耗时: " , str(round(t_elapsed, 4))+"秒")
+            self.sinOut4.emit("耗时: " ,  str(round(t_elapsed, 4)))
         
             self.sinOut3.emit(a, b)
 #sinOut3显示图用
@@ -205,8 +211,7 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
 
     def slotAdd3(self, a, b):
      
-        self.liver_mark.setChecked(True)
-        self.tumor_mark.setChecked(True)
+
 
         filenames = os.listdir(path)
 
@@ -299,11 +304,16 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
 
     def slotAdd(self, file_inf, file_inf2):
         self.state_show_label1.setText(file_inf)
-        self.state_show_label2.setText(file_inf2)
+        self.state_show_label2.setText(file_inf2 )
+    def slotAdd4(self, file_inf, file_inf2):
+        self.state_show_label1.setText(file_inf)
+        self.state_show_label2.setText(file_inf2 + '秒')
 
     def lineedit_clicked(self, e):
         
 
+        self.liver_layer.setEnabled(True)
+        self.tumor_layer.setEnabled(True)
         self.liver_layer.setChecked(False)
         self.tumor_layer.setChecked(False)
      
@@ -349,6 +359,7 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
             self.thread.sinOut.connect(self.slotAdd)
             self.thread.sinOut2.connect(self.slotAdd2)
             self.thread.sinOut3.connect(self.slotAdd3)
+            self.thread.sinOut4.connect(self.slotAdd4)
     
             self.thread.start()
             self.state_show_label1.setText("模型初始化中…")

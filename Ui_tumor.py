@@ -1,11 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon,QFont
 class Ui_tumor_seg(object):
     def setupUi(self, tumor_seg):
         tumor_seg.setObjectName("tumor_seg")
         tumor_seg.resize(713, 571)
         
-        # tumor_seg.setWindowFlags(QtCore.Qt.WindowMinimizeButtonHint)
+        #tumor_seg.setWindowFlags(QtCore.Qt.WindowMinimizeButtonHint)
         tumor_seg.setFixedSize(tumor_seg.width(), tumor_seg.height())
         
         self.centralWidget = QtWidgets.QWidget(tumor_seg)
@@ -48,7 +48,7 @@ class Ui_tumor_seg(object):
         self.seg_run.setObjectName("seg_run")
         
         self.line = QtWidgets.QFrame(self.centralWidget)
-        self.line.setGeometry(QtCore.QRect(598, 82, 92, 16))
+        self.line.setGeometry(QtCore.QRect(598, 82, 90, 16))
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
@@ -85,16 +85,25 @@ class Ui_tumor_seg(object):
         self.line_5.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_5.setObjectName("line_5")
+        
+        
         self.label_3 = QtWidgets.QLabel(self.centralWidget)
-        self.label_3.setGeometry(QtCore.QRect(568, 212, 61, 16))
+        self.label_3.setGeometry(QtCore.QRect(568, 212, 85, 16))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
+        
+        
         self.label_3.setFont(font)
         self.label_3.setScaledContents(False)
         self.label_3.setObjectName("label_3")
+       # self.label_3.setFont(QFont("Roman times",7,QFont.Bold))
+        
+        
+        
+        
         self.line_6 = QtWidgets.QFrame(self.centralWidget)
         self.line_6.setGeometry(QtCore.QRect(683, 219, 16, 71))
         self.line_6.setFrameShape(QtWidgets.QFrame.VLine)
@@ -116,7 +125,7 @@ class Ui_tumor_seg(object):
         self.line_11.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_11.setObjectName("line_11")
         self.label_4 = QtWidgets.QLabel(self.centralWidget)
-        self.label_4.setGeometry(QtCore.QRect(568, 407, 61, 20))
+        self.label_4.setGeometry(QtCore.QRect(568, 407, 85, 20))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(10)
@@ -144,14 +153,21 @@ class Ui_tumor_seg(object):
         self.line_14.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_14.setObjectName("line_14")
         self.line_15 = QtWidgets.QFrame(self.centralWidget)
-        self.line_15.setGeometry(QtCore.QRect(629, 410, 61, 16))
+        self.line_15.setGeometry(QtCore.QRect(658, 410,30, 16))
         self.line_15.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_15.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_15.setObjectName("line_15")
+        
+        
+        
         self.line_10 = QtWidgets.QFrame(self.centralWidget)
-        self.line_10.setGeometry(QtCore.QRect(628, 212, 61, 16))
+        self.line_10.setGeometry(QtCore.QRect(658, 212, 30, 16))
         self.line_10.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_10.setFrameShadow(QtWidgets.QFrame.Sunken)
+        
+        
+        
+        
         self.line_10.setObjectName("line_10")
         self.line_16 = QtWidgets.QFrame(self.centralWidget)
         self.line_16.setGeometry(QtCore.QRect(550, 210, 16, 20))
@@ -169,7 +185,7 @@ class Ui_tumor_seg(object):
         self.line_18.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_18.setObjectName("line_18")
         self.label_5 = QtWidgets.QLabel(self.centralWidget)
-        self.label_5.setGeometry(QtCore.QRect(568, 320, 61, 20))
+        self.label_5.setGeometry(QtCore.QRect(568, 320, 85, 20))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(10)
@@ -179,7 +195,7 @@ class Ui_tumor_seg(object):
         self.label_5.setScaledContents(False)
         self.label_5.setObjectName("label_5")
         self.line_19 = QtWidgets.QFrame(self.centralWidget)
-        self.line_19.setGeometry(QtCore.QRect(629, 322, 61, 16))
+        self.line_19.setGeometry(QtCore.QRect(658, 322, 30, 16))
         self.line_19.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_19.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_19.setObjectName("line_19")
@@ -198,7 +214,7 @@ class Ui_tumor_seg(object):
         self.state_show_label2.setText("")
         self.state_show_label2.setObjectName("state_show_label2")
         self.widget = QtWidgets.QWidget(self.centralWidget)
-        self.widget.setGeometry(QtCore.QRect(568, 237, 73, 40))
+        self.widget.setGeometry(QtCore.QRect(568, 237, 110, 40))
         self.widget.setObjectName("widget")
         
  
@@ -228,7 +244,7 @@ class Ui_tumor_seg(object):
         
         
         self.widget1 = QtWidgets.QWidget(self.centralWidget)
-        self.widget1.setGeometry(QtCore.QRect(568, 110, 73, 40))
+        self.widget1.setGeometry(QtCore.QRect(568, 110, 110, 40))
         self.widget1.setObjectName("widget1")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget1)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -255,7 +271,7 @@ class Ui_tumor_seg(object):
 
     def retranslateUi(self, tumor_seg):
         _translate = QtCore.QCoreApplication.translate
-        tumor_seg.setWindowTitle(_translate("tumor_seg", "Liver And Tumor Segmentation"))
+        tumor_seg.setWindowTitle(_translate("tumor_seg", "tumor_seg"))
         self.choose_raw.setText(_translate("tumor_seg", "选择目录"))
         self.state_show_label1.setText(_translate("tumor_seg", "无任务"))
         self.show_1.setText(_translate("tumor_seg", "显示"))
