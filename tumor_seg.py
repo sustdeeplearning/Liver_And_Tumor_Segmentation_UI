@@ -532,7 +532,7 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
  
         else:
   
-            QMessageBox.information(self, "Warning", "Out of range." )
+            QMessageBox.information(self, "Warning", "超出索引范围" )
             
     # 两个图层
     @pyqtSlot()

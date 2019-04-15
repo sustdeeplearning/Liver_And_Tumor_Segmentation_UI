@@ -44,7 +44,7 @@ class Ui_tumor_seg(object):
         self.right_R.setObjectName("right_R")
         
         self.seg_run = QtWidgets.QPushButton(self.centralWidget)
-        self.seg_run.setGeometry(QtCore.QRect(570, 150, 61, 23))
+        self.seg_run.setGeometry(QtCore.QRect(590, 150, 61, 23))
         self.seg_run.setObjectName("seg_run")
         
         self.line = QtWidgets.QFrame(self.centralWidget)
