@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import *
 from unet import *
 from WL import *
 import pydicom
-
+import mcubes
 
 class Worker(QThread):
     sinOut = pyqtSignal(str, str)  # 自定义信号，执行run()函数时，从相关线程发射此信号
@@ -284,6 +284,12 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
             
             self.liver_layer.setChecked(True)
             self.tumor_layer.setChecked(True)
+            
+        
+        self.tri_d_run.setEnabled(True)
+        self.left.setEnabled(True)  
+        self.right_R.setEnabled(True)
+        self.show_1.setEnabled(True)  
         
     def slotAdd2(self, file_inf):
         self.state_show_label1.setText(
@@ -363,6 +369,7 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
     
             self.thread.start()
             self.state_show_label1.setText("模型初始化中…")
+            self.state_show_label2.setText(" ")
 
     @pyqtSlot()
     def on_left_clicked(self):
@@ -532,7 +539,7 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
  
         else:
   
-            QMessageBox.information(self, "Warning", "超出索引范围" )
+            QMessageBox.information(self, "Warning", "Out of range." )
             
     # 两个图层
     @pyqtSlot()
@@ -640,10 +647,30 @@ class MainWindow(QMainWindow, Ui_tumor_seg):
             
     @pyqtSlot()
     def on_tri_d_run_clicked(self):
+        
+        """
+        Slot documentation goes here.
+        """
+        thickness = 1
+        
+        liver = self.liver
+        liver_recon = np.zeros([thickness*liver.shape[0], 512, 512])
+        for i in range(liver.shape[0]):
+            for s in range(thickness):
+                liver_recon[(s+1)*i+s] = liver[i]
 
+        vertices, triangles = mcubes.marching_cubes(liver_recon, 0)
+        mcubes.export_mesh(vertices, triangles, "liver.dae", "liver")
+        
+        tumor = self.tumor
+        tumor_recon = np.zeros([thickness*tumor.shape[0], 512, 512])
+        for i in range(tumor.shape[0]):
+            for s in range(thickness):
+                tumor_recon[(s+1)*i+s] = tumor[i]
 
-        # TODO: not implemented yet
-
+        vertices_2, triangles_2 = mcubes.marching_cubes(tumor_recon, 0)
+        mcubes.export_mesh(vertices_2, triangles_2, "tumor.dae", "tumor")        
+        
         QMessageBox.information(self, "Warning", "三维模型导出成功" )
 
 

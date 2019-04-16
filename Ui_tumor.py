@@ -139,6 +139,7 @@ class Ui_tumor_seg(object):
         self.line_12.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_12.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_12.setObjectName("line_12")
+        
         self.tri_d_run = QtWidgets.QPushButton(self.centralWidget)
         self.tri_d_run.setGeometry(QtCore.QRect(590, 345, 61, 23))
         self.tri_d_run.setObjectName("tri_d_run")
@@ -266,12 +267,23 @@ class Ui_tumor_seg(object):
         
         self.liver_layer.setEnabled(False)
         self.tumor_layer.setEnabled(False)
+ 
+
+
+
+
+        self.tri_d_run.setEnabled(False)
+        self.left.setEnabled(False)  
+        self.right_R.setEnabled(False)
+        self.show_1.setEnabled(False)          
+         
+        
         
         
 
     def retranslateUi(self, tumor_seg):
         _translate = QtCore.QCoreApplication.translate
-        tumor_seg.setWindowTitle(_translate("tumor_seg", "LATS_0.2 - SUSTDeepLearning"))
+        tumor_seg.setWindowTitle(_translate("tumor_seg", "tumor_seg"))
         self.choose_raw.setText(_translate("tumor_seg", "选择目录"))
         self.state_show_label1.setText(_translate("tumor_seg", "无任务"))
         self.show_1.setText(_translate("tumor_seg", "显示"))
