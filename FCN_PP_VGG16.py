@@ -59,21 +59,21 @@ class MUNET(nn.Module):
         # ====================== STAGE 1 ===========================
         self.conv1_1 = basicConv(self.D_in, 64, 3, 1, 1)
         self.conv1_2 = basicConv(64, 64, 3, 1, 1)
-        self.pool1 = nn.MaxPool2d(2, 2, ceil_mode=True)
+        self.pool1 = nn.MaxPool2d(2, 2, ceil_mode=False)
         # ====================== STAGE 2 ===========================
         self.conv2_1 = basicConv(64, 128, 3, 1, 1)
         self.conv2_2 = basicConv(128, 128, 3, 1, 1)
-        self.pool2 = nn.MaxPool2d(2, 2, ceil_mode=True)
+        self.pool2 = nn.MaxPool2d(2, 2, ceil_mode=False)
         # ====================== STAGE 3 ===========================
         self.conv3_1 = basicConv(128, 256, 3, 1, 1)
         self.conv3_2 = basicConv(256, 256, 3, 1, 1)
         self.conv3_3 = basicConv(256, 256, 3, 1, 1)
-        self.pool3 = nn.MaxPool2d(2, 2, ceil_mode=True)
+        self.pool3 = nn.MaxPool2d(2, 2, ceil_mode=False)
         # ====================== STAGE 4 ===========================
         self.conv4_1 = basicConv(256, 512, 3, 1, 1)
         self.conv4_2 = basicConv(512, 512, 3, 1, 1)
         self.conv4_3 = basicConv(512, 512, 3, 1, 1)
-        self.pool4 = nn.MaxPool2d(2, 2, ceil_mode=True)
+        self.pool4 = nn.MaxPool2d(2, 2, ceil_mode=False)
         # ====================== STAGE 5 ===========================
         self.conv5_1 = basicConv(512, 512, 3, 1, 1)
         self.conv5_2 = basicConv(512, 512, 3, 1, 1)
